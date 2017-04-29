@@ -10,7 +10,7 @@ const routes = [
     sidebar: () => <h3>Home</h3>,
     main: LandingPage
   },
-  { path: '/app',
+  { path: '/kanban',
     sidebar: () => <h3>Kanban</h3>,
     main: BoardContainer
   }
