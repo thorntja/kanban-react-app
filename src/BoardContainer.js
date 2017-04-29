@@ -10,7 +10,7 @@ import Loading from './Loading';
 import 'whatwg-fetch';
 import '../public/App.css';
 
-const API_URL = 'http://localhost:3001'//'http://kanbanapi.us-west-2.elasticbeanstalk.com';
+const API_URL = 'https://thetodoboard.herokuapp.com/';
 const API_HEADERS = {
  'Content-Type': 'application/json'
 };
