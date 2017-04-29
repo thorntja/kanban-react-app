@@ -73,12 +73,14 @@ class BoardContainer extends Component {
     let cardIndex = this.state.cards.findIndex((card)=>card.id === cardId);
     let card = this.state.cards[cardIndex];
     if(card === undefined) return;
+    this.setState({loading: true});
     fetch(`${API_URL}/cards`, {
       method: 'put',
       headers: API_HEADERS,
       body: JSON.stringify({status: card.status, id: card.id})
     })
     .then((response) => {
+      this.setState({loading: false});
       if(!response.ok){
         // Throw an error if server response wasn't 'ok'
         // so you can revert back the optimistic changes
@@ -110,12 +112,14 @@ class BoardContainer extends Component {
     let nextState = update(this.state.cards, { $push: [card]});
 
     this.setState({cards:nextState});
+    this.setState({loading: true});
     fetch(`${API_URL}/cards`, {
       method: 'post',
       headers: API_HEADERS,
       body: JSON.stringify(card)
     })
     .then((response) => {
+     this.setState({loading: false});
       if(response.ok){
         return response.json()
       } else {
@@ -136,12 +140,14 @@ class BoardContainer extends Component {
     let cardIndex = this.state.cards.findIndex((card)=>card.id === cardId);
     let nextState = update(this.state.cards, { $splice: [[cardIndex, 1]] });
     this.setState({cards:nextState});
+    this.setState({loading: true});
     fetch(`${API_URL}/cards`, {
       method: 'delete',
       headers: API_HEADERS,
       body: JSON.stringify({id: cardId})
     })
     .then((response) => {
+     this.setState({loading: false});
       if(!response.ok){
         // Throw an error if server response wasn't 'ok'
         // so you can revert back the optimistic changes
