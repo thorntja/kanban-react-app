@@ -10,7 +10,7 @@ import Loading from './Loading';
 import 'whatwg-fetch';
 import '../public/App.css';
 
-const API_URL = 'https://thetodoboard.herokuapp.com/';
+const API_URL = 'https://thetodoboard.herokuapp.com'
 const API_HEADERS = {
  'Content-Type': 'application/json'
 };
