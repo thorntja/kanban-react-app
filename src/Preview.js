@@ -11,7 +11,7 @@ class Preview extends Component {
     }
   }
   componentDidMount(){
-    fetch('https://thetodoboard.herokuapp.com/cards/count', {method: 'get', headers: { 'Content-Type': 'application/json'}})
+    fetch('https://thorntonjdtapi.herokuapp.com/cards/count', {method: 'get', headers: { 'Content-Type': 'application/json'}})
     .then((response) => response.json())
     .then((responseData) => {
       let fullmsg = 'Number of tasks: ' + responseData;
