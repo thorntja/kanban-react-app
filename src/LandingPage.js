@@ -23,7 +23,7 @@ class LandingPage extends Component {
         <div className="apps">
           <div className="selector">
           <div className="img_cntr">
-            <Link to="/app">
+            <Link to="/kanban">
               <img src={kanban}
                  onMouseEnter={
                    () => this.setState({showKanban: true})
