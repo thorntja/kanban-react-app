@@ -38,7 +38,7 @@ const App = () => (
             />
           ))}
           <footer>
-            <div className="github"><a href="https://github.com/thorntja"><img src={GitHub} /></a></div>
+            <div className="github"><a href="https://github.com/thorntonjdt"><img src={GitHub} /></a></div>
           </footer>
         </div>
       </Router>
